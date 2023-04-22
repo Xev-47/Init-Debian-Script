@@ -11,7 +11,7 @@
 - Ajouter le compte **docker**, installer **docker** et **Portainer** (port 9000)
 - Personnaliser l'écran d'accueil
 - Modifier le port **ssh** et empêcher l'accès **root**
-- Installer outils (MC,...)
+- Installer outils (MC, Nano, Fail2ban...)
 
 
 
