@@ -107,9 +107,9 @@ case $valret in
       echo "#!/bin/bash" > /etc/profile.d/mymotd.sh
       echo "clear" >> /etc/profile.d/mymotd.sh
       echo "" >> /etc/profile.d/mymotd.sh
-      echo "disquepourcent=$(df -Th -x tmpfs -x devtmpfs -x overlay / |awk '{print $6}'|grep '%'| sed 's/%//')" >> /etc/profile.d/mymotd.sh
-      echo "disquetotal=$(df -Th -x tmpfs -x devtmpfs -x overlay / |awk '{print $3}'|grep 'G')" >> /etc/profile.d/mymotd.sh
-      echo "disqueutil=$(df -Th -x tmpfs -x devtmpfs -x overlay / |awk '{print $4}'|grep 'G')" >> /etc/profile.d/mymotd.sh
+      echo "disquepourcent=\$(df -Th -x tmpfs -x devtmpfs -x overlay / |awk '{print $6}'|grep '%'| sed 's/%//')" >> /etc/profile.d/mymotd.sh
+      echo "disquetotal=\$(df -Th -x tmpfs -x devtmpfs -x overlay / |awk '{print $3}'|grep 'G')" >> /etc/profile.d/mymotd.sh
+      echo "disqueutil=\$(df -Th -x tmpfs -x devtmpfs -x overlay / |awk '{print $4}'|grep 'G')" >> /etc/profile.d/mymotd.sh
       echo "ip=\$(hostname -I|awk '{print \$1}')" >> /etc/profile.d/mymotd.sh
       echo "host=\$(hostname)" >> /etc/profile.d/mymotd.sh
       echo "user=\`whoami\`" >> /etc/profile.d/mymotd.sh
