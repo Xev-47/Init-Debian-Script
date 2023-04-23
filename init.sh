@@ -153,9 +153,9 @@ case $valret in
     valret=$?
     numero=`cat $fichtemp3`
     sed -i -e "s/#Port 22/Port $numero/g" /etc/ssh/sshd_config
-        sed -i -e "s/#PermitRootLogin yes/PermitRootLogin no/g" /etc/ssh/sshd_config
-      menu
-      ;;
+    sed -i -e "s/#PermitRootLogin yes/PermitRootLogin no/g" /etc/ssh/sshd_config
+    menu
+    ;;
   # Installer outils (MC, Nano, Fail2ban..)
   Outils)
       trap "rm -f $fichtemp4" 0 1 2 5 15
@@ -175,7 +175,6 @@ case $valret in
       255)
       echo "Appuyé sur Echap.";;
     esac
-
       menu
        ;;
   esac
@@ -194,5 +193,4 @@ case $valret in
   ;;
 esac
 }
-
 menu
