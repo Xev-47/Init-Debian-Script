@@ -134,9 +134,12 @@ case $valret in
       echo "printf \"\\\033[0;31mDernières connexions :\\\033[1;30m\\\n\"" >> /etc/profile.d/mymotd.sh
       echo "printf \"\${derniereco}\\\n\"" >> /etc/profile.d/mymotd.sh
       echo "printf \"\\\033[0;31mUtilisation Mémoire :\\\033[1;30m \${pourcentfree}%% - \${memutil}o / \${memtotal}o\\\n\"" >> /etc/profile.d/mymotd.sh
-      echo "printf \"\\\033[0;31mUtilisation Disque  :\\\033[1;30m \${disquepourcent}%% - \${disqueutil}o / \${disquetotal}o\\\n\"" >> /etc/profile.d/mymotd.sh
+      echo "printf \"\\\033[0;31mUtilisation Disque  :\\\033[1;30m \${disquepourcent}%% - \${disqueutil}o / \${disquetotal}o\\\033[m\\\n\"" >> /etc/profile.d/mymotd.sh
+      echo "if [ \$user = \"root\" ]" >> /etc/profile.d/mymotd.sh
+   	  echo "then" &gt;&gt; /etc/profile.d/mymotd.sh
       echo "update=\$(apt update 2>&1 | grep -c \"Tous les paquets sont à jour\")" >> /etc/profile.d/mymotd.sh
-      echo "if [ \"\${update}\" = \"0\" ] ; then printf \"\\\033[5;31mMises à jours disponibles\\\033[m\\\n\" ; else printf \"\\\033[0;32mSystème à jour\033[m\n\" ; fi" >> /etc/profile.d/mymotd.sh
+      echo "if [ \"\${update}\" = \"0\" ] ; then printf \"\\\033[5;31mMises à jours disponibles\\\033[m\\\n\" ; else printf \"\\\033[0;32mSystème à jour\\\033[m\\\n\" ; fi" >> /etc/profile.d/mymotd.sh
+      echo "fi" >> /etc/profile.d/mymotd.sh
       echo "printf \"\\\n\"" >> /etc/profile.d/mymotd.sh
       chmod +x /etc/profile.d/mymotd.sh
       menu
@@ -166,7 +169,6 @@ case $valret in
     choix2=`cat $fichtemp4`
     case $valret in
       0)
-      echo "'$choix' est votre chanteur préféré"
       apt install $choix2 -y;;
       1)
       echo "Appuyé sur Annuler.";;
