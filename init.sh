@@ -136,7 +136,7 @@ case $valret in
       echo "printf \"\\\033[0;31mUtilisation Mémoire :\\\033[1;30m \${pourcentfree}%% - \${memutil}o / \${memtotal}o\\\n\"" >> /etc/profile.d/mymotd.sh
       echo "printf \"\\\033[0;31mUtilisation Disque  :\\\033[1;30m \${disquepourcent}%% - \${disqueutil}o / \${disquetotal}o\\\033[m\\\n\"" >> /etc/profile.d/mymotd.sh
       echo "if [ \$user = \"root\" ]" >> /etc/profile.d/mymotd.sh
-   	  echo "then" &gt;&gt; /etc/profile.d/mymotd.sh
+   	  echo "then" >> /etc/profile.d/mymotd.sh
       echo "update=\$(apt update 2>&1 | grep -c \"Tous les paquets sont à jour\")" >> /etc/profile.d/mymotd.sh
       echo "if [ \"\${update}\" = \"0\" ] ; then printf \"\\\033[5;31mMises à jours disponibles\\\033[m\\\n\" ; else printf \"\\\033[0;32mSystème à jour\\\033[m\\\n\" ; fi" >> /etc/profile.d/mymotd.sh
       echo "fi" >> /etc/profile.d/mymotd.sh
