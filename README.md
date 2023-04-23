@@ -18,9 +18,9 @@
 ## Installation
 
 * root
-  ``wget -qO ./i https://raw.githubusercontent.com/Xev-47/Init-Debian-Script/main/init.sh && chmod +x i && ./i
+  ``wget -qO ./init.sh https://raw.githubusercontent.com/Xev-47/Init-Debian-Script/main/init.sh && chmod +x i && ./init.sh
   ``
 * non root
- ``sudo wget -qO ./i https://raw.githubusercontent.com/Xev-47/Init-Debian-Script/main/init.sh && sudo chmod +x i && sudo ./i
+ ``sudo wget -qO ./init.sh https://raw.githubusercontent.com/Xev-47/Init-Debian-Script/main/init.sh && sudo chmod +x i && sudo ./init.sh
 ``
 
